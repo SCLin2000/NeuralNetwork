@@ -14,5 +14,5 @@ The program runs as follows.
 2. Run main.py with Python.
 
 ## Credits
-The essense of code comes from the youtube channel [Bot Academy](https://www.youtube.com/c/BotAcademyYT) ([Github])(https://github.com/Bot-Academy).
+The essence of code comes from the youtube channel [Bot Academy](https://www.youtube.com/c/BotAcademyYT) ([Github](https://github.com/Bot-Academy)).
 The amazing works in the channel taught me how to implement the simplest neural network from scratch.
