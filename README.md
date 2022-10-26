@@ -10,7 +10,7 @@ The program runs as follows.
 3. User can choose an image in the test data. It will show the image and output the number it recognizes.
 
 ## Setup
-1. Clone/Download the repositary.
+1. Clone/Download the repository.
 2. Run main.py with Python.
 
 ## Credits
