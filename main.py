@@ -1,3 +1,4 @@
+# github version
 import gzip
 import numpy as np
 
@@ -41,8 +42,17 @@ w_1_2 = np.random.uniform(-0.5, 0.5, (num_hidden2, num_hidden1))           # 1st
 w_2_o = np.random.uniform(-0.5, 0.5, (10, num_hidden2))                    # 2nd layer -> 1st layer
 
 # train the network until the required accuracy is achieved
-# required accuracy as percentage
-required_accu = float(input("Enter the accuracy you want (99.9 for 99.9%): "))
+while (True):
+    # required accuracy as percentage
+    try:
+        required_accu = float(input("Enter the accuracy you want (99.9 for 99.9%): "))
+    except ValueError:
+        print("The value should be a float number between 0 - 100.")
+        continue
+    if (required_accu > 100 or required_accu < 0):
+        print("The value should be between 0 - 100.")
+    else:
+        break
 
 learn_rate = 0.01
 epochs = 0 # count the number of epochs
@@ -86,7 +96,7 @@ while (True):
     
     # display the result of this epoch
     accuracy = num_correct*100/num_images
-    print(f"{epochs} epoch: got {num_correct} out of {num_images}.")
+    print(f"{epochs} epoch(s): got {num_correct} out of {num_images}.")
     print(f"Accuracy {accuracy:.2f}%")
     
     if (accuracy >= required_accu): break
@@ -146,11 +156,21 @@ print(f"Accuracy {num_correct*100/num_images:.2f}%")
 import matplotlib.pyplot as plt
 
 while (True):
+    
     idx = input("Enter an integer (0-9999) or q for exit: ")
     
     if (idx == 'q'): break
+        
+    try:
+        idx = int(idx)
+    except ValueError:
+        print("The value should be an interger between 0 - 9999.")
+        continue
+    if (idx > 9999 or idx < 0):
+        print("The value should be between 0 - 9999.")
+        continue
     
-    img = data[int(idx)]
+    img = data[idx]
     
     # forward propagation: input -> 1st layer
     h1_pre = b_i_1 + w_i_1 @ img
